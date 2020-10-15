@@ -1,7 +1,6 @@
 bin
 gen
 .settings
-.DS_Store
 *Thumbs.db
 *.jar.properties
 build-mira/
@@ -23,8 +22,6 @@ push.sh
 
 .vscode/*
 
-# IntelliJ
-.idea/*
 # Exclude dictionary to share some common words like aweme, douyin, etc
 !.idea/dictionaries/dmt_dictionary.xml
 # Exclude inspection profile to share some common settings like javadoc tags
@@ -43,10 +40,6 @@ captures/
 bin/
 gen/
 
-# Gradle files
-.gradle/
-build/
-/*/build/
 
 # Local configuration file (sdk path, etc)
 brain.switch.local.properties
