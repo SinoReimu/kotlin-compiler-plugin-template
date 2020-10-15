@@ -1,1 +1,0 @@
-/Users/hoshikawa/Desktop/kotlin-compiler-plugin-demo/source/build/classes/kotlin/main/Main.class:/Users/hoshikawa/Desktop/kotlin-compiler-plugin-demo/source/build/classes/kotlin/main/MainKt.class
