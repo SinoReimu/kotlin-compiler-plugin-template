@@ -1,0 +1,4 @@
+rootProject.name = 'kotlin-compiler-plugin-template'
+include 'source'
+include 'kotlin-compiler-plugin'
+

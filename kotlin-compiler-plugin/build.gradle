@@ -1,0 +1,31 @@
+plugins{
+    id "java-gradle-plugin"
+    id 'org.jetbrains.kotlin.jvm' version '1.4.0'
+    id 'org.jetbrains.kotlin.kapt' version '1.4.0'
+}
+
+gradlePlugin {
+
+    plugins {
+        simplePlugin {
+            id = "me.hoshikawa.kotlin-compiler-plugin"
+            implementationClass = "me.hoshikawa.WrapGradleSubPlugin"
+        }
+    }
+
+}
+
+dependencies {
+
+    implementation 'io.github.microutils:kotlin-logging-jvm:2.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.0"
+    implementation "org.jetbrains.kotlin:kotlin-compiler-embeddable:1.4.0"
+
+    // contains classes like Subplugin, SubpluginOption, etc
+    implementation "org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.4.0"
+
+    // Needed to register Subplugin as a service
+    compileOnly "com.google.auto.service:auto-service:1.0-rc4"
+    kapt "com.google.auto.service:auto-service:1.0-rc4"
+
+}

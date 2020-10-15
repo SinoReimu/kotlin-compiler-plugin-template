@@ -1,0 +1,44 @@
+buildscript {
+    repositories {
+        maven {
+            url '/Users/hoshikawa/localMaven/'
+        }
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'me.hoshikawa:kotlin-compiler-plugin:0.0.1'
+    }
+}
+
+allprojects {
+    repositories {
+        maven {
+            url '/Users/hoshikawa/localMaven/'
+        }
+        mavenCentral()
+        jcenter()
+    }
+}
+
+subprojects {
+    repositories { jcenter() }
+
+    // Install into local Maven repo with `./gradlew :kotlin-plugin:install :gradle-plugin:install`
+    apply plugin: "maven"
+    group = "me.hoshikawa"
+    version = "0.0.1"
+
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                //提交到远程服务器：
+                //repository(url: "http://www.xxx.com/repos") {
+                //authentication(userName: "admin", password: "admin")
+                //}
+                //本地的Maven地址设置为项目下的/localMaven的文件夹
+                repository(url: uri('/Users/hoshikawa/localMaven/'))
+            }
+        }
+    }
+}
